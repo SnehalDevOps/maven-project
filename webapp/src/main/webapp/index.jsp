@@ -1,4 +1,3 @@
-hello ,jenkins
-this is Vishal.
+COde has been successfully build and the below build is ready to use.
 
-continuous integration to continuous deployment was successful..
+webapp.war
