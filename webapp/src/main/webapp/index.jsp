@@ -1,5 +1,2 @@
-Hello, this is Vishal -- if you are seeing this your CI CD pipeline is successful with TOMCAT.;....
-AllGOOD!!
-/n
-!!!!! cheers !!!!!
-
+!!!! cheers !!!!!
+TOday is SUNDAY and tomorrow is going to start the working week. :(
