@@ -1,6 +1,3 @@
-Hello, 
+Hello , BOBWEESWAGGER
 
-This is your CICD pipeline. 
-
-Regards, 
-BOBWEESWAGGER
+This is Jenkins.. 
