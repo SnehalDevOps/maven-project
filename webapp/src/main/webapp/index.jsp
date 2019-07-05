@@ -1,7 +1,2 @@
 Hello , BOBWEESWAGGER. 
-
-## Welcome back ##
-
-Regards,
-
-!!!DAJenkins!!! 
+@@ You Are Doing Well @@
