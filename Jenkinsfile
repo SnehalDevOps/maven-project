@@ -2,7 +2,7 @@ pipeline {
 agent any
 stages {
 stage('SCM Checkout'){
-git 'https://github.com/vpbobade/maven-project'
+git 'https://github.com/vpbobade/maven-project.git'
 }
 }
 {
@@ -40,6 +40,8 @@ stage ('Compile install'){
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean install'
+}
+}
 }
 }
 }
