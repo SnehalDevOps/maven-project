@@ -13,8 +13,6 @@ sh 'mvn clean compile'
 }
 }
 }
-}
-}
 stage ('Compile Stage') {
 steps {
 withMaven(maven : 'LocalMaven') {
