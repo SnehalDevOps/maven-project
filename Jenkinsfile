@@ -1,4 +1,3 @@
-
 pipeline {
 agent any
 stages {
@@ -13,6 +12,27 @@ withMaven(maven : 'LocalMaven') {
 sh 'mvn clean compile'
 }
 }
+}
+}
+}
+stage ('test') {
+steps {
+withMaven(maven : 'LocalMaven') {
+sh 'mvn test'
+}
+}
+}
+stage ('package'){
+steps {
+withMaven(maven : 'LocalMaven') {
+sh 'mvn package'
+}
+}
+}
+stage ('install'){
+steps {
+withMaven(maven : 'LocalMaven') {
+sh 'mvn  install'
 }
 }
 }
