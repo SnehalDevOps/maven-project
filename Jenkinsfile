@@ -1,19 +1,72 @@
+
 pipeline {
-  agent any
-  steps {
-     stage ('clone my code'){
-      git 'https://github.com/vpbobade/maven-project.git'
-         }
-         
-     stage ('compile my code'){
-      steps {
-          withMaven(maven : 'local-maven-3.5.2'){
-            sh 'mvn compile'
-            }
-            }
-            }
-            }
-            }
-            
-      
-  
+
+
+
+agent any
+
+
+
+
+
+
+
+
+
+
+
+
+
+stages {
+
+
+
+stage('SCM Checkout'){
+
+
+
+git 'https://github.com/prakashk0301/maven-project'
+
+
+
+}
+
+
+
+}
+
+
+
+{
+
+
+
+stage ('Compile Stage') {
+
+
+
+
+
+
+
+
+steps {
+
+
+
+withMaven(maven : 'LocalMaven') {
+
+
+
+sh 'mvn clean compile'
+
+
+
+}
+}
+}
+
+}
+
+
+}
