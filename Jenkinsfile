@@ -1,11 +1,13 @@
 pipeline {
     agent any
     stages {
-      stage('SCM Checkout'){
-          git url 'https://github.com/vpbobade/maven-project.git'
+      stage ('SCM Checkout'){
+          steps {
+            sh git 'https://github.com/vpbobade/maven-project.git'
        }
     }
  }
+}
 stage ('Compile Stage') {
   steps {
     withMaven(maven : 'LocalMaven') {
