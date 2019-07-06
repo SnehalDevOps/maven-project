@@ -13,33 +13,33 @@ sh 'mvn clean compile'
 }
 }
 }
-}
-}
-stage ('test') {
+stage ('Compile test') {
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean test'
 }
 }
 }
-stage ('package'){
+stage ('Compile package'){
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean package'
 }
 }
 }
-stage ('install'){
+stage ('Compile install'){
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean install'
 }
 }
 }
-stage ('deploy'){
+stage ('Compile deploy'){
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean deploy'
+}
+}
 }
 }
 }
