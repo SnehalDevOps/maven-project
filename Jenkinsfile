@@ -18,21 +18,28 @@ sh 'mvn clean compile'
 stage ('test') {
 steps {
 withMaven(maven : 'LocalMaven') {
-sh 'mvn test'
+sh 'mvn clean test'
 }
 }
 }
 stage ('package'){
 steps {
 withMaven(maven : 'LocalMaven') {
-sh 'mvn package'
+sh 'mvn clean package'
 }
 }
 }
 stage ('install'){
 steps {
 withMaven(maven : 'LocalMaven') {
-sh 'mvn  install'
+sh 'mvn clean install'
+}
+}
+}
+stage ('deploy'){
+steps {
+withMaven(maven : 'LocalMaven') {
+sh 'mvn clean deploy'
 }
 }
 }
