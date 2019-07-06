@@ -2,9 +2,7 @@ pipeline {
     agent any
     stages {
       stage('SCM Checkout'){
-          steps {
-              git 'https://github.com/vpbobade/maven-project.git'
-          }
+          git url 'https://github.com/vpbobade/maven-project.git'
        }
     }
  }
