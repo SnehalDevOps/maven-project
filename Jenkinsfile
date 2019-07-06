@@ -2,7 +2,7 @@ pipeline {
 agent any
 stages {
 stage ('SCM Checkout'){
-git 'https://github.com/vpbobade/maven-project.git'
+git 'https://github.com/prakashk0301/maven-project'
 }
 }
 }
