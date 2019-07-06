@@ -34,5 +34,3 @@ stage ('Compile install'){
     }
   }
 }
-}
-}
