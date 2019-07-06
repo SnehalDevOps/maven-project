@@ -34,12 +34,5 @@ sh 'mvn clean install'
 }
 }
 }
-#stage ('Compile deploy'){
-#steps {
-#withMaven(maven : 'LocalMaven') {
-#sh 'mvn clean deploy'
-#}
-#}
-#}
 }
 }
