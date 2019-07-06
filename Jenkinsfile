@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages {
+  steps {
      stage ('clone my code'){
       git 'https://github.com/vpbobade/maven-project.git'
          }
