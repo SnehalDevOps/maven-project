@@ -37,7 +37,7 @@ sh 'mvn clean install'
 stage ('Compile deploy'){
 steps {  
 sshagent (credentials: ['179ff7b9-dcbf-42ed-8078-d3ae0f333e9a']) {
-sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.85.235:/var/lib/tomcat/webapps/'
+sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.85.235:/var/lib/tomcat/webapps'
 }
 }
 }
