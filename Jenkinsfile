@@ -41,4 +41,3 @@ sh 'scp -o StrictHostKeyChecking=no -l **/*.war ec2-user@3.95.169.64:/usr/share/
 }
 }
 }  
-}
