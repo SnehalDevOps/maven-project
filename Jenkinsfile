@@ -34,5 +34,11 @@ sh 'mvn clean install'
 }
 }
 }
+stage ('Compile deploy'){
+sshagent (credentials: ['179ff7b9-dcbf-42ed-8078-d3ae0f333e9a']) {
+sh 'scp -o StrictHostKeyChecking=no -l **/*.war ec2-user@3.95.169.64:/usr/share/tomcat/webapps 192.168.1.106 uname -a'
 }
+}
+}
+}  
 }
