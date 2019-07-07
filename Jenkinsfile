@@ -7,6 +7,7 @@ git 'https://github.com/vpbobade/maven-project.git'
 }
 {
 stage ('Compile Stage') {
+agent { label 'master-maven'}
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean compile'
@@ -42,4 +43,5 @@ sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.85.235:/var/l
 }
 }
 }  
+}
 }
