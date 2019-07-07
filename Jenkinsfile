@@ -44,4 +44,3 @@ sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.85.235:/var/l
 }
 }  
 }
-}
