@@ -10,8 +10,10 @@ stage ('Compile Stage') {
 agent { label 'Slave1'}
 steps {
 withAnt(installation: 'ant_1.9.2', jdk: 'local-java-1.8.0-openjdk_64') {
-sh "ant build-service"
-sh "ant build-service war"
+sh "ant init"
+sh "ant compile"
+sh "ant war"
+sh "ant clean"
 }
 }
 }
