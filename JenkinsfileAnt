@@ -9,38 +9,10 @@ git 'https://github.com/vpbobade/maven-project.git'
 stage ('Compile Stage') {
 agent { label 'slave1'}
 steps {
-withAnt(ant : 'ant_1.9.2') {
-sh 'ant clean compile'
+withAnt(installation: 'Version 1.9.2', jdk: 'java-1.8.0-openjdk-1.8.0.201.b09-0.amzn2.x86_64') {
+sh 'ant build service'
 }
 }
 }
-stage ('Compile test') {
-steps {
-withAnt(ant : 'ant_1.9.2') {
-sh 'ant clean test'
 }
-}
-}
-stage ('Compile package'){
-steps {
-withAnt(ant : 'ant_1.9.2') {
-sh 'ant clean package'
-}
-}
-}
-stage ('Compile install'){
-steps {
-withAnt(ant : 'ant_1.9.2') {
-sh 'ant clean install'
-}
-}
-}
-stage ('Compile deploy'){
-steps {  
-sshagent (credentials: ['179ff7b9-dcbf-42ed-8078-d3ae0f333e9a']) {
-sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.85.235:/var/lib/tomcat/webapps'
-}
-}
-}
-}  
 }
