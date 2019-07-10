@@ -9,7 +9,7 @@ git 'https://github.com/vpbobade/maven-project.git'
 stage ('Compile Stage') {
 agent { label 'Slave1'}
 steps {
-withAnt(installation: 'ant_1.9.2', jdk: 'java-1.8.0-openjdk-1.8.0.201.b09-0.amzn2.x86_64') {
+withAnt(installation: 'ant_1.9.2', jdk: 'local-java-1.8.0-openjdk_64') {
 sh 'ant build service'
 }
 }
