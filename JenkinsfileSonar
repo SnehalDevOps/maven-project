@@ -35,9 +35,11 @@ sh 'mvn clean install'
 }
 }
 stage('Build & Package') {
+steps {
 withSonarQubeEnv('SonarQube') {
 sh 'mvn clean install sonar:sonar'
 }
 }
 }
 }
+)
