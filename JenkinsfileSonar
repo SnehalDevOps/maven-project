@@ -7,7 +7,7 @@ git 'https://github.com/vpbobade/maven-project.git'
 }
 {
 stage ('Compile Stage') {
-agent { label 'slave1'}
+agent { label 'Slave1'}
 steps {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean compile'
