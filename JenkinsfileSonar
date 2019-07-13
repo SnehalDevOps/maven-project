@@ -27,11 +27,18 @@ sh 'mvn clean package'
 }
 }
 }
-stage('Build & Package') {
+stage ('Compile install'){
+steps {
+withMaven(maven : 'LocalMaven') {
+sh 'mvn clean install'
+}
+}
+}
+stage('Build & Package'){
 steps {
 withSonarQubeEnv('sonar') {
 withMaven(maven : 'LocalMaven') {
-sh 'mvn clean install sonar:sonar'
+sh 'mvn clean package sonar:sonar'
 }
 }
 }
