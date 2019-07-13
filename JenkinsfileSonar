@@ -37,7 +37,7 @@ sh 'mvn clean install'
 }
 stage ('build && SonarQube analysis') {
 steps {
-withSonarQubeEnv('sonar_jenkins') {
+withSonarQubeEnv('SonarQube') {
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean install sonar:sonar'
 }
