@@ -36,7 +36,8 @@ sh 'mvn clean install'
 }
 stage('Build & Package') {
 steps {
-withSonarQubeEnv('sonar') 
+withSonarQubeEnv(credentialsId: 'sonar') {
+withMaven(maven : 'LocalMaven') {
 sh 'mvn clean install sonar:sonar'
 }
 }
