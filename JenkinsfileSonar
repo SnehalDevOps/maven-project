@@ -34,14 +34,18 @@ sh 'mvn clean install'
 }
 }
 }
-stage ('build && SonarQube analysis') {
+stage('Sonarqube') {
+environment {
+scannerHome = tool 'SonarQube scanner'
+}
 steps {
 withSonarQubeEnv('SonarQube') {
+sh "${scannerHome}/bin/sonar-scanner"
 withMaven(maven : 'LocalMaven') {
 sh 'mvn clean install sonar:sonar'
 }
 }
 }
-}  
 }
+}  
 }
