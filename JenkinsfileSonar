@@ -27,13 +27,6 @@ sh 'mvn clean package'
 }
 }
 }
-stage ('Compile install'){
-steps {
-withMaven(maven : 'LocalMaven') {
-sh 'mvn clean install'
-}
-}
-}
 stage('Build & Package') {
 steps {
 withSonarQubeEnv('sonar') {
