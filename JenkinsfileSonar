@@ -39,7 +39,7 @@ stage ('build && SonarQube analysis') {
 steps {
 withSonarQubeEnv('sonar_jenkins') {
 withMaven(maven : 'LocalMaven') {
-sh 'mvn clean package sonar:sonar'
+sh 'mvn clean install sonar:sonar'
 }
 }
 }
