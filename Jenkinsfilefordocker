@@ -18,3 +18,4 @@ sh "docker login -u vpbobade -p ${credentials}"
 }
 sh 'docker push vbob/vbob-app:1.0.0'
 }
+}
