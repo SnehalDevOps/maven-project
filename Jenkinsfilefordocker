@@ -1,6 +1,6 @@
 node{
 stage ('scm checkout') {
-git 'https://github.com/vpbobade/maven-project/'}
+git ('https://github.com/vpbobade/maven-project')
 }
 stage ('Checkout to different branch') {
 sh "git branch -r"
@@ -11,4 +11,5 @@ sh label: '', script: 'mvn clean package '
 }
 stage ('docker image build') {
 sh 'docker build -t vbob/vbob-app:1.0.0 .'
+}
 }
