@@ -2,3 +2,11 @@ node{
 stage ('scm checkout') {
 git 'https://github.com/vpbobade/maven-project/'}
 }
+stage ('Checkout to different branch') {
+sh "git branch -r"
+sh "git checkout master"
+}
+stage ('package stage') {
+sh label: '', script: 'mvn clean package '
+}
+}
