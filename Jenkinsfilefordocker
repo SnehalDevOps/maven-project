@@ -10,7 +10,7 @@ stage ('package stage') {
 sh label: '', script: 'mvn clean package '
 }
 stage ('docker image build') {
-sh 'docker build -t vbob/vbob-app:1.0.0 .'
+sh 'docker build -t vpbobade/vbob-app:1.0.0 .'
 }
 stage ('Push Docker image to DockerHub') {
 withCredentials([usernameColonPassword(credentialsId: 'dockerHubAccount', variable: 'credentials')]) {
