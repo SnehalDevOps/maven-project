@@ -12,4 +12,3 @@ sh label: '', script: 'mvn clean package '
 stage ('docker image build') {
 sh 'docker build -t vbob/vbob-app:1.0.0 .'
 }
-}
