@@ -1,5 +1,4 @@
 node{
 stage ('scm checkout') {
-git 'https://github.com/vpbobade/maven-project'
-}
+git 'https://github.com/vpbobade/maven-project/'}
 }
