@@ -13,9 +13,9 @@ stage ('docker image build') {
 sh 'docker build -t vpbobade/vbob-app:1.0.0 .'
 }
 stage ('Push Docker image to DockerHub') {
-withCredentials([usernameColonPassword(credentialsId: 'dockerHubAccount', variable: 'credentials')]) {
-sh "docker login -u vpbobade -p ${credentials}"
+withCredentials([string(credentialsId: 'dockerHubAccount', variable: 'dockerHubAccount')]) {
+sh "docker login -u vpbobade -p ${dockerHubAccount}"
 }
-sh 'docker push vbob/vbob-app:1.0.0'
+sh 'docker push vpbobade/vbob-app:1.0.0'
 }
 }
