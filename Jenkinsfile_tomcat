@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage ('SCM Checkout') {
+            steps {
+                git 'https://github.com/vpbobade/maven-project'
+            }    
+        }
+    
+        stage ('Compile Stage') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+        stage ('Testing Stage') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+        stage ('install Stage') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage ('deploy to dev') {
+            steps { 
+                sshagent(['deploy_to_docker']) {
+                sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.81.65:/var/lib/tomcat/webapps'
+				}
+			}
+		}
+	}
+}    
