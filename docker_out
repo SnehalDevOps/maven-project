@@ -1,0 +1,10 @@
+Sending build context to Docker daemon  384.5kB
+Step 1/4 : FROM tomcat:7
+ ---> be38ac28efcd
+Step 2/4 : MAINTAINER = "vbobade@altimetrik.com"
+ ---> Using cache
+ ---> 8a0e5472c95b
+Step 3/4 : WORKDIR /var/lib/jenkins/workspace/
+ ---> Using cache
+ ---> ca061fd527de
+Step 4/4 : COPY /var/lib/jenkins/workspace/Q_pipeline/webapp/target/*.war /usr/local/tomcat/webapps/
