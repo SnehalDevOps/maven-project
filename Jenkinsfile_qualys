@@ -37,7 +37,7 @@ pipeline {
             }
         }
 	
-/*	
+	
 		stage ('Get Image id') {
 //Use the same repo:tag (qualys:sample in this case) combination with the grep command to get the same image id and save the image id in an environment variable
 			steps {
@@ -57,7 +57,7 @@ pipeline {
 					getImageVulnsFromQualys useGlobalConfig:true, imageIds: env.IMAGE_ID
 		    }
         }
-*/	
+	
 		stage ('Deploy to Dev') {
 			steps {
 				script {	
