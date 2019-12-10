@@ -23,7 +23,7 @@ pipeline {
 		 //Build the docker image with a tag (qualys:sample in this case)
 			steps {
 				dir("dockerbuild")
-				sh "docker build -t vpbobade/vbob-app:1.0.0 . > docker_out"
+				sh "docker build -t vpbobade/vbob-app1:1.0.0 . > docker_out"
 	        }	    
 	    }
 	
@@ -32,7 +32,7 @@ pipeline {
 		        withCredentials([usernamePassword(credentialsId: 'mydocker', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 sh "docker login -u ${user} -p ${pass}"
 				}
-                sh 'docker push vpbobade/vbob-app:1.0.0'
+                sh 'docker push vpbobade/vbob-app1:1.0.0'
             }
         }
 	
@@ -41,7 +41,7 @@ pipeline {
 //Use the same repo:tag (qualys:sample in this case) combination with the grep command to get the same image id and save the image id in an environment variable
 			steps {
 				script {
-					def IMAGE_ID = sh(script: "docker images | grep -E '^vpbobade/vbob-app:*1.0.0' | head -1 | awk '{print \$3}'", returnStdout:true).trim()
+					def IMAGE_ID = sh(script: "docker images | grep -E '^vpbobade/vbob-app1:*1.0.0' | head -1 | awk '{print \$3}'", returnStdout:true).trim()
 					env.IMAGE_ID = IMAGE_ID
 				}
 			}
@@ -60,7 +60,7 @@ pipeline {
 		stage ('Deploy to Dev') {
             steps {
                 script {
-                def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app vpbobade/vbob-app:1.0.0'
+                def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app vpbobade/vbob-app1:1.0.0'
                 sshagent(['deploy_to_docker']) {
                 sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.81.65 ${dockerRun}"
             }
