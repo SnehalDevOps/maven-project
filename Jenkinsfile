@@ -23,7 +23,7 @@ pipeline {
 		 //Build the docker image with a tag (qualys:sample in this case)
 			steps {
 				dir("dockerbuild")
-				sh "docker build -f /root/Dockerfile -t vpbobade/vbob-app:1.0.0 . > docker_out"
+				sh "docker build -t vpbobade/vbob-app:1.0.0 . > docker_out"
 	        }	    
 	    }
 	
