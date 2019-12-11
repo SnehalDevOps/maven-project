@@ -71,10 +71,3 @@ pipeline {
 			}    
 		}
     }	
-/*	
-		post { 
-        always { 
-            cleanWs()
-	    }	
-	} 
-}
