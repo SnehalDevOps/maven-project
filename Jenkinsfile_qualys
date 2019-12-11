@@ -22,11 +22,11 @@ pipeline {
         }     
         
         stage ("Building docker image") {
-		 //Build the docker image with a tag (qualys:sample in this case)
+//Build the docker image with a tag (qualys:sample in this case)
 			steps {
 			    sh "docker build -f Dockerfile -t vpbobade/vbob-app1:1.0.0 . > docker_out"
-			}	    
-	    }
+						}	    
+	    	}
 	    
 		stage ('Push Docker image to DockerHub') {
 			steps {
@@ -55,7 +55,7 @@ pipeline {
 //Use the same environment variable(env.IMAGE_ID) as an input to Qualys Plugin's step
 			steps {
 					getImageVulnsFromQualys useGlobalConfig:true, imageIds: env.IMAGE_ID
-		    }
+		    		}
         }
 	
 		stage ('Deploy to Dev') {
@@ -78,5 +78,3 @@ pipeline {
 	    }	
 	} 
 }
-hello
-*/
