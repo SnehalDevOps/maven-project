@@ -1,5 +1,6 @@
 FROM openjdk:8
 MAINTAINER = "vbobade@altimetrik.com"
+USER root
 COPY /var/lib/jenkins/workspace/Q_pipeline/webapp/target/webapp.war /usr/share/tomcat/webapps/
 
 #FROM java:8
