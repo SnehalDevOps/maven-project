@@ -1,6 +1,4 @@
 FROM tomcat
 MAINTAINER = "vbobade@altimetrik.com"
-WORKDIR /var/lib/jenkins/workspace/Q_pipeline/webapp/target
-RUN pwd ; ls -ltr 
-COPY  . /usr/share/tomcat/webapps
-ADD *.war /usr/share/tomcat/webapps
+WORKDIR /var/lib/jenkins/workspace/
+COPY */webapp/target/*.war /usr/share/tomcat/webapps
