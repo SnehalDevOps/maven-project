@@ -1,7 +1,6 @@
 FROM openjdk:8
 MAINTAINER = "vbobade@altimetrik.com"
-WORKDIR /var/lib/jenkins/workspace/Q_pipeline/webapp
-COPY target/*.war /usr/share/tomcat/webapps/
+COPY /var/lib/jenkins/workspace/Q_pipeline/webapp/target/webapp.war /usr/share/tomcat/webapps/
 
 #FROM java:8
 #EXPOSE 9001
