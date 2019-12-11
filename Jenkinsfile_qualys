@@ -10,7 +10,7 @@ pipeline {
          
         stage ("git checkout") {
             steps {
-                git ('https://github.com/vpbobade/deployment-examples/tree/master/java-tomcat-war-maven')
+                git ('https://github.com/vpbobade/demo-java')
             }
         }
     
