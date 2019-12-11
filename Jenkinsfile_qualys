@@ -24,7 +24,7 @@ pipeline {
         stage ("Building docker image") {
 		 //Build the docker image with a tag (qualys:sample in this case)
 			steps {
-			    sh "chmod -R 777 //var/run/docker.sock"	
+			    sh "sudo chmod -R 777 //var/run/docker.sock"	
 			    sh "docker build -f Dockerfile -t vpbobade/vbob-app1:1.0.0 . > docker_out"
 			}	    
 	    }
