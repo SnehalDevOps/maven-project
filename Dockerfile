@@ -1,5 +1,5 @@
 FROM tomcat
-USER root
+USER jenkins
 MAINTAINER = "vbobade@altimetrik.com"
 ADD */*/*/*.war /usr/share/tomcat/webapps/
 EXPOSE 9000
