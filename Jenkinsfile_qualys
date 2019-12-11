@@ -27,9 +27,11 @@ pipeline { environment {
         stage ("Building docker image") {
 //Build the docker image with a tag (qualys:sample in this case)
 			steps {
+				script {
 			    //sh "docker build -f Dockerfile -t vpbobade/mydockerimage:1.0.0 . > docker_out"
 				//sh "./make_docker_image.sh"
-				docker.build registry	
+				docker.build registry
+				}
 			}	    
 	    }
 	    
